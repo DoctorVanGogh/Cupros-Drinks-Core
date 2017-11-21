@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- Insertion hook for patching -->
+	<ThingDef Name="CPD_ThingInsertion" Abstract="True" />
+	
+	<ThingDef Name="CPD_DrinkBase" ParentName="ResourceBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MaxHitPoints>25</MaxHitPoints>
+			<Mass>0.3</Mass>
+		</statBases>
+		<ingestible>
+			<preferability>NeverForNutrition</preferability>
+			<foodType>Fluid</foodType>
+			<nutrition>0.01</nutrition>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestSound>CPD_PlainDrink</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<chairSearchRadius>10</chairSearchRadius>
+		</ingestible>
+		<equipmentType>Primary</equipmentType>
+    <techLevel>Neolithic</techLevel>
+		<comps>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>neck</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+    </tools>
+		<tradeTags>
+			<li>Exotic</li>
+			<li>AJO_JoyItem</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>CPD_DrinksTable</defName>
+		<label>drinks table</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A table for preparing and brewing a variety of beverages.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/DrinksTable/DrinksTable</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<costList>
+			<Steel>20</Steel>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<startElectricalFires>false</startElectricalFires>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+	</ThingDef>
+
+</Defs>

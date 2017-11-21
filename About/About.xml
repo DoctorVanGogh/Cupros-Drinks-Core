@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Cupro's Drinks - Core</name>
+  <author>cuproPanda</author>
+  <url>https://ludeon.com/forums/index.php?topic=32190</url>
+  <targetVersion>0.18.0</targetVersion>
+  <description>Adds required core features for other Cupro's Drinks modules.\nThis mod must be loaded before other Cupro's Drinks modules.</description>
+</ModMetaData>
